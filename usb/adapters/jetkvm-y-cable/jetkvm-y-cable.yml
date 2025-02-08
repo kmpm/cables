@@ -1,0 +1,38 @@
+# https://www.szapphone.com/blog/usb-c-pinout-guide/
+
+connectors:
+  Power:
+    type: USB-C
+    subtype: Female
+    pinlabels: [GND, TX1+, TX1-, VBUS, CC1, D+, D-, SBU1, VBUS b,  RX2-, RX2+, GND b]
+  JetKVM:
+    type: USB-C Male
+    subtype: Male
+    pinlabels: [GND, RX2+, RX2-, VBUS, SBU1, D-, D+, CC1, SBU1 b, TX1-, TX1+, GND b]
+  Data:
+    type: USB-C
+    subtype: Female
+    pinlabels: [GND, TX1+, TX1-, VBUS, CC1, D+, D-, SBU1, VBUS b,  RX2-, RX2+, GND b]
+
+cables:
+  Wiring:
+    wirecount: 4
+    colors: [BK, RD, BU, GN]
+
+
+connections:
+
+  -
+    - Power: [GND,VBUS, D-, D+]
+    - Wiring: [1, 2, 3, 4]
+    - JetKVM: [GND, VBUS, D-, D+]
+  -
+    - Data: [GND, VBUS, D-, D+,]
+    - Wiring: [1, 2, 3, 4]
+    - JetKVM: [GND, VBUS, D-, D+]
+
+tweak:
+  override:
+    Wiring:
+      fontsize: "10"
+      style: dashed

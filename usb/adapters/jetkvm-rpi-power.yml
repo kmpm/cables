@@ -1,0 +1,32 @@
+connectors:
+  Power:
+    type: USB
+    pinlabels: [VCC, D-, D+, GND]
+  Raspberry Pi:
+    type: USB
+    pinlabels: [VCC, D-, D+, GND]
+  Server:
+    type: USB
+    pinlabels: [VCC, D-, D+, GND]
+
+cables:
+  Wiring:
+    wirecount: 4
+    colors: [RD, BU, GN, BK]
+
+
+connections:
+  -
+    - Power: [VCC, GND]
+    - Wiring: [1, 4]
+    - Raspberry Pi: [VCC, GND]
+  -
+    - Server: [D-, D+, GND]
+    - Wiring: [2, 3, 4]
+    - Raspberry Pi: [D-, D+, GND]
+
+tweak:
+  override:
+    Wiring:
+      fontsize: "10"
+      style: dashed
